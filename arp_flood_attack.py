@@ -1,4 +1,4 @@
-"""Code to perform Request type ARP attack"""
+"""Code to perform flood type ARP attack"""
 
 from scapy.all import *
 from subprocess import call
