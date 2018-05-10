@@ -15,13 +15,14 @@ Requirements –
       Import Mininet on Virtual Box and install required dependencies 
 
       a)	Update repo:
-      >> sudo apt-get update 
+      > sudo apt-get update 
 
       b)	Install dependencies:
-      >> sudo apt-get install git
-      >> sudo apt-get install build-essential ant maven python-dev
+      > sudo apt-get install git
       
-      >> sudo apt-get install python-pip 
+      > sudo apt-get install build-essential ant maven python-dev
+      
+      > sudo apt-get install python-pip 
 
       c)	Install mininet in Ubuntu as follows: 
       >> git clone git://github.com/mininet/mininet 
