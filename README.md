@@ -82,58 +82,57 @@ Requirements –
 
 3)	Install DHCP server
 
->>> sudo apt-get update
->>> sudo apt-get install isc-dhcp-server
+      $ sudo apt-get update
+      $ sudo apt-get install isc-dhcp-server
 
-Modify dhcp.conf file:
->>> sudo nano -w /etc/dhcp/dhcpd.conf
+      Modify dhcp.conf file:
+      
+      $ sudo nano -w /etc/dhcp/dhcpd.conf
 
-Place the below lines of code into the file
-# A slightly different configuration for an internal subnet.    
- subnet 10.0.0.0 netmask 255.255.255.0 {    
-    range 10.0.0.0 10.0.0.30;    
-    option domain-name-servers 8.8.8.8, 8.8.4.4;    
-    \#  option domain-name "internal.example.org";    
-    option routers 10.0.0.254;    
-    option broacast-address 10.0.0.255;    
-    default-lease-time 600;    
-    max-lease-time 7200;}
-
-
-
-
+      Place the below lines of code into the file
+      A slightly different configuration for an internal subnet.    
+       subnet 10.0.0.0 netmask 255.255.255.0 {    
+          range 10.0.0.0 10.0.0.30;    
+          option domain-name-servers 8.8.8.8, 8.8.4.4;    
+          \#  option domain-name "internal.example.org";    
+          option routers 10.0.0.254;    
+          option broacast-address 10.0.0.255;    
+          default-lease-time 600;    
+          max-lease-time 7200;}
 
 
 Implementation –
 
-1)	Create topology on mininet – 
-sudo mn --topo single,4 --mac --controller=remote,ip=[IP ADDRESS OF CONTROLLER] --switch ovsk,protocols=OpenFlow13
+      1)	Create topology on mininet – 
+      
+      $ sudo mn --topo single,4 --mac --controller=remote,ip=[IP ADDRESS OF CONTROLLER] --switch ovsk,protocols=OpenFlow13
 
-This will create a topology with 4 hosts connected to single switch.
+      This will create a topology with 4 hosts connected to single switch.
 
-2)	Start Ryu application – 
+      2)	Start Ryu application – 
 
->> ryu-manger simple arp_attack_mitigation.py
+      $ ryu-manger simple arp_attack_mitigation.py
 
 
-3)	Run DHCP server and client commands –
-We have configured Host H1 as DHCP server. 
-Enter following command on mininet to open terminal for h1 –
-Mininet> xterm h1
+      3)	Run DHCP server and client commands –
+      
+      We have configured Host H1 as DHCP server. 
+      Enter following command on mininet to open terminal for h1 –
+      Mininet> xterm h1
 
-Enter following commands on h1 terminal to start DHCP service–
-  h1>>  echo 1 > /proc/sys/net/ipv4/ip_forward
-  h1>> service isc-dhcp-server restart &
+      Enter following commands on h1 terminal to start DHCP service–
+        h1>>  echo 1 > /proc/sys/net/ipv4/ip_forward
+        h1>> service isc-dhcp-server restart &
 
-Enter following command on each host to get IP address assigned by DHCP server –
-  h2>> ifconfig h2-eth0 0
-  h2>> dhclient h2-eth0
-Enter same commands for h3 and h4 as well 
+      Enter following command on each host to get IP address assigned by DHCP server –
+        h2>> ifconfig h2-eth0 0
+        h2>> dhclient h2-eth0
+      Enter same commands for h3 and h4 as well 
 
-4)	Run Attack code from h2 – 
-To run ARP spoofing attack from h2, enter – 
- h2>> python arp_attack.py
+      4)	Run Attack code from h2 – 
+      To run ARP spoofing attack from h2, enter – 
+       h2>> python arp_attack.py
 
-To run ARP flood attack from h2, enter –
- h2>> python arp_flood_attack.py
+      To run ARP flood attack from h2, enter –
+       h2>> python arp_flood_attack.py
 
