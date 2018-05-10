@@ -19,7 +19,8 @@ Requirements –
 
       b)	Install dependencies:
       >> sudo apt-get install git
-      >> sudo apt-get install build-essential ant maven python-dev 
+      >> sudo apt-get install build-essential ant maven python-dev
+      
       >> sudo apt-get install python-pip 
 
       c)	Install mininet in Ubuntu as follows: 
