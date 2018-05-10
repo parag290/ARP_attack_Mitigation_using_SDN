@@ -1,8 +1,5 @@
 # ARP_attack_Mitigation_using_SDN
 
-
-Project – ARP attack mitigation in Software defined networking
-
 Introduction – 
 
 ARP spoofing is a common attack observed in LAN network. It is layer-2 attack, thus affecting upper layers of network stack as well. This makes ARP attack detection and mitigation necessary in LAN network.
@@ -46,28 +43,41 @@ Requirements –
 
 2)	Install RYU 
 
-Step 1: Install tools
-sudo apt-get -y install git python-pip python-dev
+      Step 1: Install tools
+      
+      $ sudo apt-get -y install git python-pip python-dev
 
-Step 2 : install python packages
-sudo apt-get -y install python-eventlet python-routes python-webob python-paramiko
+      Step 2 : install python packages
+      
+      $ sudo apt-get -y install python-eventlet python-routes python-webob python-paramiko
 
-step 3:Clone RYU repo from git
-git clone https://github.com/osrg/ryu.git
-sudo pip install setuptools --upgrade
- cd ryu/
-~/ryu→ sudo pip install -r tools/pip-requires
-~/ryu-> sudo apt install gcc python-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev zlib1g-dev
-~/ryu-> sudo pip install -U netaddr six pbr
-~/ryu -> sudo python ./setup.py install
+      step 3:Clone RYU repo from git
+      
+      $ git clone https://github.com/osrg/ryu.git
+      
+      $ sudo pip install setuptools --upgrade
+       
+      $ cd ryu/
+      
+      ~/ryu→ sudo pip install -r tools/pip-requires
+      
+      ~/ryu-> sudo apt install gcc python-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev zlib1g-dev
+      
+      ~/ryu-> sudo pip install -U netaddr six pbr
+      
+      ~/ryu -> sudo python ./setup.py install
 
-step 4: Install and upgrade python packages
-~/ryu -> sudo pip install six --upgrade
-~/ryu -> sudo pip install oslo.config msgpack-python
-~/ryu -> sudo pip install eventlet –upgrade
+      step 4: Install and upgrade python packages
+      
+      ~/ryu -> sudo pip install six --upgrade
+      
+      ~/ryu -> sudo pip install oslo.config msgpack-python
+      
+      ~/ryu -> sudo pip install eventlet –upgrade
 
-After installation of Ryu, copy ‘arp_attck_mitigation.py’ to following location – 
-“Ryu/ryu/app/   “ 
+      After installation of Ryu, copy ‘arp_attck_mitigation.py’ to following location – 
+      
+      “Ryu/ryu/app/   “ 
 
 
 3)	Install DHCP server
