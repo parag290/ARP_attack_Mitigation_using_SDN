@@ -12,25 +12,25 @@ Among four hosts, one host acts as a DHCP server. One host act as an attacker wh
 Requirements – 
 
 1)	Install Mininet –
-Import Mininet on Virtual Box and install required dependencies 
+   Import Mininet on Virtual Box and install required dependencies 
 
-a)	Update repo:
-•	 sudo apt-get update 
+   a)	Update repo:
+   •	 sudo apt-get update 
 
-b)	Install dependencies:
-•	sudo apt-get install git
-• sudo apt-get install build-essential ant maven python-dev 
-• sudo apt-get install python-pip 
+   b)	Install dependencies:
+   •	sudo apt-get install git
+   • sudo apt-get install build-essential ant maven python-dev 
+   • sudo apt-get install python-pip 
 
-c)	Install mininet in Ubuntu as follows: 
-•	git clone git://github.com/mininet/mininet 
-•	cd mininet 
-•	git tag        -   This step should list mininet version available : 2.2.2 , 2.2.1 etc. If 2.2.2 is available then install 2.2.2 else install 2.2.1
-•	git checkout -b 2.2.2 
-•	cd ..  : to go one step back into directory tree.
-•	mininet/util/install.sh -a 
-•	sudo mn --test pingall  : To test if mininet is successfully installed. Output should look similar to below screenshot
-•	sudo mn -c  : to clear the topology created
+   c)	Install mininet in Ubuntu as follows: 
+   •	git clone git://github.com/mininet/mininet 
+   •	cd mininet 
+   •	git tag        -   This step should list mininet version available : 2.2.2 , 2.2.1 etc. If 2.2.2 is available then install 2.2.2 else install 2.2.1
+   •	git checkout -b 2.2.2 
+   •	cd ..  : to go one step back into directory tree.
+   •	mininet/util/install.sh -a 
+   •	sudo mn --test pingall  : To test if mininet is successfully installed. Output should look similar to below screenshot
+   •	sudo mn -c  : to clear the topology created
 
 2)	Install RYU 
 Step 1: Install tools
